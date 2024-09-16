@@ -57,7 +57,7 @@ source('assets/render_toc.R')
 At any time, you can press "O" (capital O) and see tiles of the slides that you can jump between.
 
 ```{r toc, echo=FALSE, class="flexcolumn"} 
-render_toc("template-extra.Rmd")
+render_toc("SAR_workflows_NSASS.Rmd")
 ```
 
 
