@@ -1,7 +1,7 @@
 ---
-title:  "Template - Extra"
-subtitle: "Some extra css for side notes and boxes"
-author: "Eli Holmes<br>NOAA Fisheries, NWFSC<br>`r Sys.Date()`"
+title:  "Learning and Improving upon Stock Assessment Workflows across the U.S.A."
+author: "Samantha Schiano<br>ECS Tech in support of NOAA Fisheries<br>National <br>Oct. 3, 2024"
+cover: static/title_page_example.png
 output:
   xaringan::moon_reader:
     self_contained: true
@@ -54,7 +54,9 @@ source('assets/render_toc.R')
 
 ## Table of Contents
 
-At any time, you can press "O" (capital O) and see tiles of the slides that you can jump between.
+<!---
+At any time, you can press "O" (capital O) and see tiles of the slides that you can jump   between.
+--->
 
 ```{r toc, echo=FALSE, class="flexcolumn"} 
 render_toc("SAR_workflows_NSASS.Rmd")
@@ -62,24 +64,119 @@ render_toc("SAR_workflows_NSASS.Rmd")
 
 
 ---
-name: sidenotes
-text: Side notes
+name: summary
+text: Stock Assessment Workflows
 
-## Side notes
+## Stock Assessment Workflows
 
+What are they?
 
-.pull-left-wide[
-1. This has side notes in a 'hand' font.
-1. There is black and blue versions.
+> * Process of evaluating a fisheries population from gathering input data, running an assessment model, writing a report, and presenting to a managing body
+> * Composed of three parts
+
+.three-column[
+<img src="static/input_1.png" width="200" height="200"/>
 ]
-.pull-right-narrow[
-.hand-blue[
-You can add sidenotes. Here I have wrapped the text in `.hand-blue` to make it smaller and blue.
+
+.three-column[
+<img src="static/model_1.png" width="200" height="200"/>
 ]
 
-.hand[
-You can add black sidenotes.
+.three-column[
+<img src="static/report_1.png" width="200" height="200"/>
 ]
+
+
+---
+## Stock Assessment Workflows
+
+How can they vary?
+
+- Regionally different (even species to species)
+- Simple to more complex
+- Partially automated or manual
+
+---
+name: variation
+text: Regional Variation
+
+## Regional Variation
+
+
+
+---
+name: objectives
+text: Objectives
+
+## Objectives
+
+- Improve stock assessment process by developing a reproducible and streamlined workflow
+- Ensure the end product supports production of stock assessments
+- Integrates into the next generation of assessment modelling
+
+---
+class: middle
+
+# Example
+
+---
+name: asar-example
+text: ASAR Example
+
+## ASAR R Package and Template
+
+.pull-left[
+- Run function
+- Create template with modular design of quarto files to better break down the report
+
+```
+asar::create_template(
+  new_template = TRUE,
+  format = "pdf",
+  office = "NWFSC",
+  species = "Dover sole",
+  spp_latin = "Pomatomus saltatrix",
+  year = 2010,
+  author = c("John Snow", "Danny Phantom", "Patrick Star"),
+  include_affiliation = TRUE,
+  parameters = FALSE,
+  resdir = "C:/Users/Documents/Example_Files",
+  model_results = "Report.sso",
+  model = "SS3"
+)
+```
+]
+.pull-right[
+![](static/example_file_system.png)
+
+![](static/example_pop-up.png)
+]
+
+---
+## ASAR R Package and Template
+
+.pull-left[
+![](static/title_page_example.png)
+]
+.pull-right[
+![](static/template_toc_example.png)
+]
+
+---
+name: asar-satf
+text: Pre-programmed Tables and Figures
+
+## Pre-Programmed Tables and Figures
+
+.pull-left[
+- Packaged into satf
+- Pre-coded tables (flextable) and figures (ggplot2)
+- Designed to work with standard file format that is made through converter function
+  - Works with stock synthesis and BAM output files
+  - WHAM and AMAK up next
+]
+.pull-right[
+![]()
 ]
 
 ---
@@ -175,16 +272,6 @@ You can add sidenotes. Here I have wrapped the text in `.hand-blue` to make it s
 ]
 
 .small[If you leave off the line-feed, then it will use a span element and won't pick up the right line-height spacing.]]
-
-
----
-name: plaintitle
-text: Plain title slide
-
-
-class: middle
-
-# A slide with just a title
 
 ---
 name: twocolumn
